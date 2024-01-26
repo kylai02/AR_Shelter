@@ -29,6 +29,38 @@
 # Visual Studio Code
 .vscode/
 
+# Assets
+10F/
+10F.meta
+Coffee_shop/
+Coffee_shop.meta
+HandRails/
+HandRails.meta
+Haruka_AnimeStyleGirl/
+Haruka_AnimeStyleGirl.meta
+Kitchen - interior and props.meta
+Kitchen - interior and props/
+Laboratory/
+Laboratory.meta
+Materials/
+Materials.meta
+Mixall_Studio/
+Mixall_Studio.meta
+MusicalInstrument/
+MusicalInstrument.meta
+New Axis Studio/
+New Axis Studio.meta
+OfficeAndPoliceStation/
+OfficeAndPoliceStation.meta
+Plugins/
+Plugins.meta
+PowerToolsPack/
+PowerToolsPack.meta
+SpaceZeta_MetallicOutdoorFurniture/
+SpaceZeta_MetallicOutdoorFurniture.meta
+TirgamesAssets/
+TirgamesAssets.meta
+
 # Gradle cache directory
 .gradle/
 
