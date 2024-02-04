@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!95 &92069246 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8542715125309286223, guid: f0ab64bda8a309a41810ef11cc5064d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 277081224}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &277081224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1438,7 +1432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1eecf1b8e2b454eaa8c3a493b51e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 92069246}
 --- !u!114 &1600835755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,7 +1554,7 @@ MonoBehaviour:
   hideControllerOnAttach: 1
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
+  useHandObjectAttachmentPoint: 0
   attachEaseIn: 0
   snapAttachEaseInCurve:
     serializedVersion: 2
