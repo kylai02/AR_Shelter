@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.ar_shelter.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\h8906\\AR_Shelter\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Project\\AR_Shelter\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "AR_Shelter [Testing]"
