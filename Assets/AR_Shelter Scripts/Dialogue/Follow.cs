@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 public class Follow : MonoBehaviour {
-  [Header("Offset of UI")]
+  [Header("Parameter")]
   [SerializeField] private float distanceFromCamera = 0.2f;
+  [SerializeField] private float verticalOffset = -0.2f;
   [SerializeField] private float smoothTime = 1f;
   [SerializeField] private float maxAngleDistance = 10f;
   [SerializeField] private ClampValue xClampValue;
@@ -26,7 +27,8 @@ public class Follow : MonoBehaviour {
 
   private void Move() {
     Vector3 targetPos = mainCamera.transform.position + 
-      mainCamera.transform.forward * distanceFromCamera;
+      mainCamera.transform.forward * distanceFromCamera +
+      mainCamera.transform.up * verticalOffset;
     transform.position = targetPos;
   }
 
