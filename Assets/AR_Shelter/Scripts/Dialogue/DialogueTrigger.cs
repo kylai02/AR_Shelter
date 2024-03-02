@@ -7,13 +7,15 @@ using UnityEngine.UIElements;
 
 
 public class DialogueTrigger : MonoBehaviour {
-  [SerializeField] private List<DialogueString> dialogueStrings = new();
+  [HeaderAttribute("Dialogues")]
+  [SpaceAttribute(3)]
+  [SerializeField] private List<DialogueString> _dialogueStrings = new();
 
   private bool _hasSpoken = false;
 
   private void OnTriggerEnter(Collider other) {
     if (!_hasSpoken) {
-      DialogueManager.instance.DialogueStart(dialogueStrings);
+      DialogueManager.instance.DialogueStart(_dialogueStrings);
       _hasSpoken = true;
     }
   }

@@ -9,12 +9,14 @@ public class WateringCan : MonoBehaviour {
     float rotateAngle = WrapAngle(transform.localEulerAngles.z);
     if (rotateAngle < -45) {
       Debug.Log("Drop");
+      // TODO: Trigger the watering effect
     }
     else {
       Debug.Log("Hold");
     }
   }
 
+  // Convert the transform's eulerAngles to the form of the inspector
   private float WrapAngle(float angle) {
     angle %= 360;
     if (angle > 180) {
