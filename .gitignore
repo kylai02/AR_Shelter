@@ -29,7 +29,7 @@
 # Visual Studio Code
 .vscode/
 
-# Assets
+# Assets, which you have to import MANUALLY
 10F/
 10F.meta
 Allsky/
