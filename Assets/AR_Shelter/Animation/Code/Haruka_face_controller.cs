@@ -31,6 +31,7 @@ public class haruka : MonoBehaviour
                 ChangeExpressionState(10);
                 animator.SetInteger("Face_statement",10);
             }
+            animator.SetInteger("Movement", 0);
             a++;
         }
         if (Input.GetKeyDown(KeyCode.B))
@@ -42,6 +43,7 @@ public class haruka : MonoBehaviour
                 ChangeExpressionState(11);
                 animator.SetInteger("Face_statement",11);
             }
+            animator.SetInteger("Movement", 1);
             b++;
         }
         else if (Input.GetKeyDown(KeyCode.C))
@@ -53,6 +55,7 @@ public class haruka : MonoBehaviour
                 ChangeExpressionState(12);
                 animator.SetInteger("Face_statement",12);
             }
+            animator.SetInteger("Movement", 2);
             c++;
         }
         // 繼續加入其他數字條件

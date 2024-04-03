@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour {
     );
 
     if (dialogueList[currentDialogueIndex].isEnd) {
+      dialogueList[currentDialogueIndex]?.endDialogueEvent.Invoke();
       DialogueStop();
     }
 

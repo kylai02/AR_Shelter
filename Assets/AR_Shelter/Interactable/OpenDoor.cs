@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 
 public class OpenDoor : MonoBehaviour {
@@ -15,6 +16,10 @@ public class OpenDoor : MonoBehaviour {
   [SpaceAttribute(3)]
   [SerializeField] private Collider doorCollider;
   [SerializeField] private Collider handleTrigger;
+
+  [HeaderAttribute("Events")]
+  [SpaceAttribute(3)]
+  public UnityEvent endEvent;
 
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
@@ -30,6 +35,8 @@ public class OpenDoor : MonoBehaviour {
 
       doorCollider.enabled = false;
       handleTrigger.enabled = false;
+
+      endEvent?.Invoke();
     }
   }
 }
