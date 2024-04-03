@@ -13,8 +13,8 @@ public class OpenDoor : MonoBehaviour {
 
   [HeaderAttribute("References")]
   [SpaceAttribute(3)]
-  [SerializeField] private Collider _doorCollider;
-  [SerializeField] private Collider _handleTrigger;
+  [SerializeField] private Collider doorCollider;
+  [SerializeField] private Collider handleTrigger;
 
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
@@ -28,8 +28,8 @@ public class OpenDoor : MonoBehaviour {
         mode: RotateMode.WorldAxisAdd
       );
 
-      _doorCollider.enabled = false;
-      _handleTrigger.enabled = false;
+      doorCollider.enabled = false;
+      handleTrigger.enabled = false;
     }
   }
 }

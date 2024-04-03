@@ -22,7 +22,6 @@ public class WateringCan : MonoBehaviour {
     if (angle > 180) {
       return angle - 360;
     }
-
     return angle;
   }
 }
