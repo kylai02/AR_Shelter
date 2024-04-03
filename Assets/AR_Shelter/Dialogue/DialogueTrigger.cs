@@ -9,14 +9,14 @@ using UnityEngine.UIElements;
 public class DialogueTrigger : MonoBehaviour {
   [HeaderAttribute("Dialogues")]
   [SpaceAttribute(3)]
-  [SerializeField] private List<DialogueString> _dialogueStrings = new();
+  [SerializeField] private List<DialogueString> dialogueStrings = new();
 
-  private bool _hasSpoken = false;
+  private bool hasSpoken = false;
 
   private void OnTriggerEnter(Collider other) {
-    if (!_hasSpoken) {
-      DialogueManager.instance.DialogueStart(_dialogueStrings);
-      _hasSpoken = true;
+    if (!hasSpoken) {
+      DialogueManager.instance.DialogueStart(dialogueStrings);
+      hasSpoken = true;
     }
   }
 }

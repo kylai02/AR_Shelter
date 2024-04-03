@@ -7,32 +7,32 @@ using DG.Tweening;
 public class OpenDoubleDoor : MonoBehaviour {
   [HeaderAttribute("Parameters")]
   [SpaceAttribute(3)]
-  [SerializeField] private int _openAngle;
-  [SerializeField] private float _duration;
+  [SerializeField] private int openAngle;
+  [SerializeField] private float duration;
 
   [HeaderAttribute("References")]
   [SpaceAttribute(10)]
-  [SerializeField] private GameObject _antiClockwiseDoor;
-  [SerializeField] private GameObject _clockwiseDoor;
-  [SerializeField] private Collider _handleTrigger;
+  [SerializeField] private GameObject antiClockwiseDoor;
+  [SerializeField] private GameObject clockwiseDoor;
+  [SerializeField] private Collider handleTrigger;
 
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
     // TODO: Determine if the collider is a hand
     if (true) {
-      _antiClockwiseDoor.transform.DORotate(
-        endValue: new Vector3(0, -1 * _openAngle, 0), 
-        duration: _duration, 
+      antiClockwiseDoor.transform.DORotate(
+        endValue: new Vector3(0, -1 * openAngle, 0), 
+        duration: duration, 
         mode: RotateMode.WorldAxisAdd
       );
 
-      _clockwiseDoor.transform.DORotate(
-        endValue: new Vector3(0, _openAngle, 0), 
-        duration: _duration, 
+      clockwiseDoor.transform.DORotate(
+        endValue: new Vector3(0, openAngle, 0), 
+        duration: duration, 
         mode: RotateMode.WorldAxisAdd
       );
 
-      _handleTrigger.enabled = false;
+      handleTrigger.enabled = false;
     }
   }
 }
