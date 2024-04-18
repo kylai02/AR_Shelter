@@ -9,17 +9,15 @@ public class ShakeEffect : MonoBehaviour {
   [SerializeField] private float shakeAmount = 0.1f;
 
   private Vector3 initPos;
-  public int times;
-  public int shakeCtr;
+  private int times;
 
   void Start() {
     initPos = transform.localPosition;
     times = (int)(shakeTime / shakePeriod);
-    shakeCtr = 0;
   }
 
   void Update() {
-    if (Input.GetKey(KeyCode.I)) {
+    if (Input.GetKeyDown(KeyCode.I)) {
       StartCoroutine(StartShake());
     }
     else {
@@ -30,7 +28,8 @@ public class ShakeEffect : MonoBehaviour {
   IEnumerator StartShake() {
     for (int i = 0; i < times; ++i) {
       Vector3 shakePos = initPos + Random.insideUnitSphere * shakeAmount;
-      shakePos.y = initPos.y;
+      shakePos.x = initPos.x;
+      // shakePos.y = initPos.y;
 
       transform.localPosition = shakePos;
       yield return new WaitForSeconds(shakePeriod);
