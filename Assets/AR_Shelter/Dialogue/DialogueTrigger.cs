@@ -24,6 +24,7 @@ public class DialogueTrigger : MonoBehaviour {
 [System.Serializable]
 public class DialogueString {
   public string text;
+  public string talker;
   public bool isEnd;
   
   [Header("Triggered Events")]

@@ -860,74 +860,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408254115}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &412711576
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7238550750166928224, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_Name
-      value: Haruka_Tshirt_A 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016318425844814298, guid: b52e46935ace18246a7355f6a8cbff98,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b52e46935ace18246a7355f6a8cbff98, type: 3}
 --- !u!1 &528226529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1176,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2077998804}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+--- !u!1001 &902142640
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.824
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0072974907
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.836
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558815403123311263, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566338513629216506, guid: b0d3975a300a8464c81081f8d5dd5b62,
+        type: 3}
+      propertyPath: m_Name
+      value: Haruka_Child_Stand
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0d3975a300a8464c81081f8d5dd5b62, type: 3}
 --- !u!1 &984013506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,4 +1964,4 @@ SceneRoots:
   - {fileID: 2129046191}
   - {fileID: 1819257246}
   - {fileID: 2077998804}
-  - {fileID: 412711576}
+  - {fileID: 902142640}
