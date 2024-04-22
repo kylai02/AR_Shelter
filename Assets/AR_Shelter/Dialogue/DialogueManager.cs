@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour {
   [SpaceAttribute(3)]
   [SerializeField] private GameObject dialogueParent;
   [SerializeField] private TMP_Text dialogueText;
+  [SerializeField] private TMP_Text talkerText;
   
   [HeaderAttribute("Parameters")]
   [SpaceAttribute(3)]
@@ -42,22 +43,23 @@ public class DialogueManager : MonoBehaviour {
     StartCoroutine(PrintDialogue());
   }
 
-  // Iterate through the sentences in the _dialogueList and print them out
+  // Iterate through the sentences in the dialogueList and print them out
   private IEnumerator PrintDialogue() {
     while (currentDialogueIndex < dialogueList.Count) {
       DialogueString line = dialogueList[currentDialogueIndex];
 
       line.startDialogueEvent?.Invoke();
 
-      yield return StartCoroutine(TypeText(line.text));
+      yield return StartCoroutine(TypeText(line.talker, line.text));
 
       line.endDialogueEvent?.Invoke();
     }
   }
 
   // Typing effect
-  private IEnumerator TypeText(string text) {
+  private IEnumerator TypeText(string talker, string text) {
     dialogueText.text = "";
+    talkerText.text = talker + " :";
     foreach (char letter in text.ToCharArray()) {
       dialogueText.text += letter;
       yield return new WaitForSeconds(typingSpeed);
@@ -80,6 +82,7 @@ public class DialogueManager : MonoBehaviour {
     StopAllCoroutines();
 
     dialogueText.text = "";
+    talkerText.text = "";
     dialogueParent.SetActive(false);
   }
 }

@@ -17,9 +17,7 @@ public class OpenDoor : MonoBehaviour {
   [SerializeField] private Collider doorCollider;
   [SerializeField] private Collider handleTrigger;
 
-  [HeaderAttribute("Events")]
-  [SpaceAttribute(3)]
-  public UnityEvent endEvent;
+  public bool isOpen = false;
 
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
@@ -36,7 +34,7 @@ public class OpenDoor : MonoBehaviour {
       doorCollider.enabled = false;
       handleTrigger.enabled = false;
 
-      endEvent?.Invoke();
+      isOpen = true;
     }
   }
 }
