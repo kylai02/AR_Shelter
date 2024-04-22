@@ -29,5 +29,7 @@ public class Quest_1_2 : Quest {
     yield return new WaitUntil(() => trigger.isTriggered);
 
     StartDialogues();
+
+    // TODO: WaitUntil Animation is over
   }
 }
