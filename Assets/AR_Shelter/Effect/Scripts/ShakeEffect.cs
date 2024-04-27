@@ -1,31 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Valve.VR;
 
 public class ShakeEffect : MonoBehaviour {
-  [SerializeField] private float shakeTime = 5f;
-  [SerializeField] private float shakePeriod = 0.2f;
+  [SerializeField] private float shakePeriod = 0.02f;
   [SerializeField] private float shakeAmount = 0.1f;
 
   private Vector3 initPos;
   private int times;
 
-  void Start() {
+  public void StartShaking(float shakeTime) {
     initPos = transform.localPosition;
     times = (int)(shakeTime / shakePeriod);
+    SteamVR_Actions.default_Haptic[SteamVR_Input_Sources.LeftHand].Execute(0, shakeTime, 30, 10);
+    SteamVR_Actions.default_Haptic[SteamVR_Input_Sources.RightHand].Execute(0, shakeTime, 30, 10);
+
+    StartCoroutine(ShakeRoutine());
   }
 
-  void Update() {
-    if (Input.GetKeyDown(KeyCode.I)) {
-      StartCoroutine(StartShake());
-    }
-    else {
-      transform.localPosition = initPos;
-    }
-  }
-
-  IEnumerator StartShake() {
+  IEnumerator ShakeRoutine() {
     for (int i = 0; i < times; ++i) {
       Vector3 shakePos = initPos + Random.insideUnitSphere * shakeAmount;
       shakePos.x = initPos.x;
