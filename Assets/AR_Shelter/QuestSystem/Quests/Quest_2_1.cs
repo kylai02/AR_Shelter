@@ -24,7 +24,7 @@ public class Quest_2_1 : Quest {
   }
 
   IEnumerator QuestRoutine() {
-    yield return new WaitForSeconds(5f);
+    yield return new WaitForSeconds(3f);
 
     StartDialogues();
 

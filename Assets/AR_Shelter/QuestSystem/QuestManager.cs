@@ -19,8 +19,6 @@ public class QuestManager : MonoBehaviour {
     } else {
       Destroy(gameObject);
     }
-
-    DontDestroyOnLoad(gameObject);
   }
 
   void Update() {

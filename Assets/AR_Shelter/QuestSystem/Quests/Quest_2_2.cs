@@ -21,6 +21,9 @@ public class Quest_2_2 : Quest {
     yield return new WaitForSeconds(waitForSeconds);
     
     shakeEffect.StartShaking(60f);
+
+    yield return new WaitForSeconds(3f);
+    
     StartDialogues();
   }
 }
