@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour {
   [HeaderAttribute("References")]
   [SpaceAttribute(3)]
   [SerializeField] private GameObject dialogueParent;
+  [SerializeField] private GameObject teleport;
   [SerializeField] private TMP_Text dialogueText;
   [SerializeField] private TMP_Text talkerText;
   
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour {
 
   public void DialogueStart(List<DialogueString> textToPrint) {
     dialogueParent.SetActive(true);
+    teleport.SetActive(false);
 
     dialogueList = textToPrint;
     currentDialogueIndex = 0;
@@ -84,5 +86,7 @@ public class DialogueManager : MonoBehaviour {
     dialogueText.text = "";
     talkerText.text = "";
     dialogueParent.SetActive(false);
+    teleport.SetActive(true);
+    // Debug.Log("tt");
   }
 }

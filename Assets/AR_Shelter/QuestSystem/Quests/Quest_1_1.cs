@@ -20,7 +20,6 @@ public class Quest_1_1 : Quest {
 
   IEnumerator WaitUntilDoorOpen() {
     OpenDoor openDoor = door.GetComponent<OpenDoor>();
-    
     yield return new WaitUntil(() => openDoor.isOpen);
 
     doorTargetEffect.SetActive(false);
