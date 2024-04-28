@@ -27,6 +27,7 @@ public class Quest_1_2 : Quest {
     harukaAnimationController.SetMovement(1);
 
     yield return new WaitUntil(() => trigger.isTriggered);
+    yield return new WaitForSeconds(1f);
 
     StartDialogues();
 
