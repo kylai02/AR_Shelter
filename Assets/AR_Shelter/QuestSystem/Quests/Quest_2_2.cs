@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,15 @@ public class Quest_2_2 : Quest {
   [SerializeField] private float waitForSeconds = 300f;
   [SerializeField] private float shakeTime = 60f;
 
+  public static event Action MemoryStartEvent;
+
   protected override void StartQuest() {
     StartCoroutine(QuestRoutine());
   }
 
   IEnumerator QuestRoutine() {
+    MemoryStartEvent?.Invoke();
+
     yield return new WaitForSeconds(waitForSeconds);
     
     shakeEffect.StartShaking(60f);
