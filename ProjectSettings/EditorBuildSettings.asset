@@ -12,14 +12,8 @@ EditorBuildSettings:
     path: Assets/AR_Shelter/Scenes/Main_2.unity
     guid: 637dc187209f2834192bfdc6b5d04949
   - enabled: 1
-    path: Assets/AR_Shelter/Scenes/Night.unity
-    guid: 87d99600f1c14894d92273c9777e3d84
-  - enabled: 1
-    path: Assets/AR_Shelter/Scenes/TestFunction.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/AR_Shelter/Scenes/Interactions_Example.unity
-    guid: e3b77830391f10343929883b18f4d5ae
+    path: Assets/AR_Shelter/Scenes/Night_real.unity
+    guid: fb623d952427c7146a1ca20b2dc1ed42
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 76d673d668137f244a297543e09014f1,
       type: 2}
