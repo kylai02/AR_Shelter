@@ -23,7 +23,9 @@ public class Quest_2_2 : Quest {
   IEnumerator QuestRoutine() {
     MemoryStartEvent?.Invoke();
 
-    yield return new WaitForSeconds(waitForSeconds);
+    // DEBUG
+    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q));
+    // yield return new WaitForSeconds(waitForSeconds);
     
     shakeEffect.StartShaking(60f);
 

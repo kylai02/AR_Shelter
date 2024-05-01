@@ -8,13 +8,26 @@ public class Quest_1_2 : Quest {
   [SpaceAttribute(3)]
   [SerializeField] private HarukaAnimationController harukaAnimationController;
   [SerializeField] private Quest_1_2_Trigger trigger;
+  [SerializeField] private GameObject plateRoadEffect;
+  [SerializeField] private GameObject kitchenAnimation;
+
+  private bool hasPlayed = false;
+  private bool canPlay = false;
 
   protected override void StartQuest() {
     StartCoroutine(QuestCoroutine());
   }
 
-  public void SkipToNextQuestForDebug() {
-    Invoke("NextQuest", 5f);
+  public void CanPlayAnimation() {
+    canPlay = true;
+  }
+
+  public void PlayAnimation() {
+    if (!hasPlayed && canPlay) {
+      hasPlayed = true;
+      plateRoadEffect.SetActive(true);
+      kitchenAnimation.SetActive(true);
+    }
   }
 
   IEnumerator QuestCoroutine() {
@@ -31,6 +44,11 @@ public class Quest_1_2 : Quest {
 
     StartDialogues();
 
-    // TODO: WaitUntil Animation is over
+    yield return new WaitUntil(() => hasPlayed);
+    yield return new WaitForSeconds(10f);
+
+    kitchenAnimation.SetActive(false);
+    NextQuest();
+    gameObject.SetActive(false);
   }
 }
