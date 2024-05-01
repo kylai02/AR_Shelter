@@ -10,7 +10,7 @@ public class TestFunction : MonoBehaviour {
 
   void Update() {
     if (Input.GetKeyDown(KeyCode.G)) {
-      glasses.transform.DOLocalMoveY(0.4f, 4);
+      glasses.transform.DOLocalMoveY(0.4f, 4).SetEase(Ease.OutCubic);
     }
   }
 }

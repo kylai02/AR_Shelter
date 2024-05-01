@@ -8,6 +8,8 @@ public class Quest_2_2 : Quest {
   [HeaderAttribute("References")]
   [SpaceAttribute(3)]
   [SerializeField] private ShakeEffect shakeEffect;
+  [SerializeField] private GameObject wardDoorEffect;
+  [SerializeField] private OpenDoor wardDoor;
 
   [HeaderAttribute("Parameters")]
   [SpaceAttribute(3)]
@@ -15,6 +17,12 @@ public class Quest_2_2 : Quest {
   [SerializeField] private float shakeTime = 60f;
 
   public static event Action MemoryStartEvent;
+
+  void Update() {
+    if (wardDoor.isOpen) {
+      wardDoorEffect.SetActive(false);
+    }
+  }
 
   protected override void StartQuest() {
     StartCoroutine(QuestRoutine());

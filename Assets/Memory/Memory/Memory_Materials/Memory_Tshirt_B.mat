@@ -21,7 +21,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2998
+  m_CustomRenderQueue: 3000
   stringTagMap:
     IgnoreProjection: true
     RenderType: Transparent
@@ -249,7 +249,7 @@ Material:
     - _Anisotropy: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
-    - _AutoRenderQueue: 0
+    - _AutoRenderQueue: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
     - _BaseColor_Step: 0.482
@@ -479,8 +479,8 @@ Material:
     - _utsTechnique: 0
     - _utsVersion: 2.08
     - _utsVersionX: 0
-    - _utsVersionY: 10
-    - _utsVersionZ: 0
+    - _utsVersionY: 9
+    - _utsVersionZ: 6
     m_Colors:
     - _1st_ShadeColor: {r: 0.6813813, g: 0.751068, b: 0.8207547, a: 1}
     - _2nd_ShadeColor: {r: 0.25882354, g: 0.31198862, b: 0.39607844, a: 1}
