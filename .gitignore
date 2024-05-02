@@ -30,6 +30,8 @@
 .vscode/
 
 # Assets, which you have to import MANUALLY
+NotoSansTC-VariableFont_8192.asset
+NotoSansTC-VariableFont_8192.asset.meta
 10F/
 10F.meta
 Allsky/
