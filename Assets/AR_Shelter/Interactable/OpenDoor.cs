@@ -16,6 +16,7 @@ public class OpenDoor : MonoBehaviour {
   [SpaceAttribute(3)]
   [SerializeField] private Collider doorCollider;
   [SerializeField] private Collider handleTrigger;
+  [SerializeField] private GameObject teleportPointParent;
 
   public bool isOpen = false;
 
@@ -33,6 +34,7 @@ public class OpenDoor : MonoBehaviour {
 
       doorCollider.enabled = false;
       handleTrigger.enabled = false;
+      teleportPointParent.SetActive(false);
 
       isOpen = true;
     }
