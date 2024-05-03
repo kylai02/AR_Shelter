@@ -30,6 +30,7 @@ public class Quest_2_1 : Quest {
 
     OpenDoor openDoor = door.GetComponent<OpenDoor>();
     yield return new WaitUntil(() => openDoor.isOpen);
+    AudioManager.instance.FadeIn("BGM", false);
     yield return new WaitForSeconds(3f);
 
     DialogueManager.instance.DialogueStart(dialogueAfterDoorOpenedStrings);

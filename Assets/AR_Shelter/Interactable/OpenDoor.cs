@@ -20,12 +20,19 @@ public class OpenDoor : MonoBehaviour {
 
   public bool isOpen = false;
 
+  private AudioSource audioSource;
+  
+  void Awake() {
+    audioSource = gameObject.GetComponent<AudioSource>();
+  }
+
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
     int angle = openAngle * (antiClockRotate ? -1 : 1);
 
     // TODO: Determine if the collider is a hand
     if (true) {
+      audioSource.Play();
       transform.DORotate(
         endValue: new Vector3(0, angle, 0), 
         duration: duration, 

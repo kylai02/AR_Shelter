@@ -37,11 +37,17 @@ public class Quest_1_5 : Quest {
   }
 
   IEnumerator QuestCoroutine() {
-    // TODO: WaitUntil Animation is over
     yield return new WaitUntil(() => hasPlayed);
-    yield return new WaitForSeconds(10);
+    
+    AudioManager.instance.FadeIn("Watering", false);
+    AudioManager.instance.FadeIn("Verse", false);
+    yield return new WaitForSeconds(8f);
+    AudioManager.instance.FadeOut("Watering", false);
+    AudioManager.instance.FadeOut("Verse", false);
+    yield return new WaitForSeconds(2f);
 
     gardenAnimation.SetActive(false);
+    AudioManager.instance.FadeIn("BGM", true);
 
     DialogueManager.instance.DialogueStart(dialogueAfterAnimationStrings);
   }

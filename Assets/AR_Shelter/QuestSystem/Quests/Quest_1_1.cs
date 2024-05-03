@@ -21,6 +21,7 @@ public class Quest_1_1 : Quest {
   IEnumerator WaitUntilDoorOpen() {
     OpenDoor openDoor = door.GetComponent<OpenDoor>();
     yield return new WaitUntil(() => openDoor.isOpen);
+    AudioManager.instance.FadeIn("BGM", false);
 
     doorTargetEffect.SetActive(false);
 
