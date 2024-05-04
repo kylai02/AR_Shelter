@@ -24,10 +24,14 @@ public class Quest_2_2 : Quest {
 
   public static event Action MemoryStartEvent;
 
+  private float timer = 0f;
+
   void Update() {
     if (wardDoor.isOpen) {
       wardDoorEffect.SetActive(false);
     }
+
+    timer += Time.deltaTime;
   }
 
   protected override void StartQuest() {
@@ -41,9 +45,8 @@ public class Quest_2_2 : Quest {
   IEnumerator QuestRoutine() {
     MemoryStartEvent?.Invoke();
 
-    // DEBUG
-    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q));
-    // yield return new WaitForSeconds(waitForSeconds);
+    timer = 0;
+    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q) || timer >= waitForSeconds);
     
     AudioManager.instance.StopAllAudio();
     // AudioManager.instance.FadeOut("BGM", true);
@@ -59,8 +62,8 @@ public class Quest_2_2 : Quest {
 
     FadeScreen.instance.FadeOut(0.5f);
     AudioManager.instance.Play("BrokenGlass");
-    glasses.SetActive(true);
     yield return new WaitForSeconds(1f);
+    glasses.SetActive(true);
     FadeScreen.instance.FadeIn(1f);
 
     DialogueManager.instance.DialogueStart(dialogueAfterEarthquakeStrings);
