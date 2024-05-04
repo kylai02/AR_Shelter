@@ -16,8 +16,15 @@ public class OpenDoor : MonoBehaviour {
   [SpaceAttribute(3)]
   [SerializeField] private Collider doorCollider;
   [SerializeField] private Collider handleTrigger;
+  [SerializeField] private GameObject teleportPointParent;
 
   public bool isOpen = false;
+
+  private AudioSource audioSource;
+  
+  void Awake() {
+    audioSource = gameObject.GetComponent<AudioSource>();
+  }
 
   // Touch the trigger to open the door
   private void OnTriggerEnter(Collider other) {
@@ -25,6 +32,7 @@ public class OpenDoor : MonoBehaviour {
 
     // TODO: Determine if the collider is a hand
     if (true) {
+      audioSource.Play();
       transform.DORotate(
         endValue: new Vector3(0, angle, 0), 
         duration: duration, 
@@ -33,6 +41,7 @@ public class OpenDoor : MonoBehaviour {
 
       doorCollider.enabled = false;
       handleTrigger.enabled = false;
+      teleportPointParent.SetActive(false);
 
       isOpen = true;
     }

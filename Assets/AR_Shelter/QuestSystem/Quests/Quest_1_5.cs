@@ -8,6 +8,14 @@ public class Quest_1_5 : Quest {
   [SpaceAttribute(3)]
   [SerializeField] private List<DialogueString> dialogueAfterAnimationStrings = new();
 
+  [HeaderAttribute("References")]
+  [SpaceAttribute(3)]
+  [SerializeField] private GameObject wateringCanRoadEffect;
+  [SerializeField] private GameObject gardenAnimation;
+
+  private bool hasPlayed = false;
+  private bool canPlay = false;
+
   protected override void StartQuest() {
     StartDialogues();
   }
@@ -16,9 +24,30 @@ public class Quest_1_5 : Quest {
     StartCoroutine(QuestCoroutine());
   }
 
+  public void CanPlayAnimation() {
+    canPlay = true;
+  }
+
+  public void PlayAnimation() {
+    if (!hasPlayed && canPlay) {
+      hasPlayed = true;
+      wateringCanRoadEffect.SetActive(true);
+      gardenAnimation.SetActive(true);
+    }
+  }
+
   IEnumerator QuestCoroutine() {
-    // TODO: WaitUntil Animation is over
-    yield return new WaitForSeconds(5f);
+    yield return new WaitUntil(() => hasPlayed);
+    
+    AudioManager.instance.FadeIn("Watering", false);
+    AudioManager.instance.FadeIn("Verse", false);
+    yield return new WaitForSeconds(8f);
+    AudioManager.instance.FadeOut("Watering", false);
+    AudioManager.instance.FadeOut("Verse", false);
+    yield return new WaitForSeconds(2f);
+
+    gardenAnimation.SetActive(false);
+    AudioManager.instance.FadeIn("BGM", true);
 
     DialogueManager.instance.DialogueStart(dialogueAfterAnimationStrings);
   }

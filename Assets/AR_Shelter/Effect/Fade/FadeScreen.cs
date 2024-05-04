@@ -12,8 +12,11 @@ public class FadeScreen : MonoBehaviour {
 
   private Renderer render;
 
+  public static FadeScreen instance;
+
   void Start() {
     render = GetComponent<Renderer>();
+    instance = this;
 
     if (fadeOnStart) {
       FadeIn();
@@ -21,22 +24,30 @@ public class FadeScreen : MonoBehaviour {
   }
 
   public void FadeIn() {
-    Fade(1, 0);
+    Fade(1, 0, fadeDuration);
+  }
+
+  public void FadeIn(float duration) {
+    Fade(1, 0, duration);
   }
 
   public void FadeOut() {
-    Fade(0, 1);
+    Fade(0, 1, fadeDuration);
+  }
+  
+  public void FadeOut(float duration) {
+    Fade(0, 1, duration);
   }
 
-  public void Fade(float alphaIn, float alphaOut) {
-    StartCoroutine(FadeRoutine(alphaIn, alphaOut));
+  public void Fade(float alphaIn, float alphaOut, float duration) {
+    StartCoroutine(FadeRoutine(alphaIn, alphaOut, duration));
   }
 
-  IEnumerator FadeRoutine(float alphaIn, float alphaOut) {
+  IEnumerator FadeRoutine(float alphaIn, float alphaOut, float duration) {
     float timer = 0;
-    while (timer <= fadeDuration) {
+    while (timer <= duration) {
       Color newColor = fadeColor;
-      newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
+      newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / duration);
 
       render.material.SetColor("_BaseColor", newColor);
 
