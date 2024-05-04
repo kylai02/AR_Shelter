@@ -48,7 +48,7 @@ public class Quest_1_2 : Quest {
 
     AudioManager.instance.FadeIn("Frying", false);
     AudioManager.instance.FadeIn("Verse", false);
-    yield return new WaitForSeconds(8f);
+    yield return new WaitForSeconds(10f);
     AudioManager.instance.FadeOut("Frying", false);
     AudioManager.instance.FadeOut("Verse", false);
     yield return new WaitForSeconds(2f);

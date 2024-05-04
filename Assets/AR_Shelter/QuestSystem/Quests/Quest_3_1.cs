@@ -32,7 +32,7 @@ public class Quest_3_1 : Quest {
     yield return new WaitForSeconds(2f);
     AudioManager.instance.FadeIn("Chrous", false);
     animationObj.SetActive(true);
-    yield return new WaitForSeconds(7f);
+    yield return new WaitForSeconds(8f);
     AudioManager.instance.FadeOut("Chrous", false);
     yield return new WaitForSeconds(2f);
     AudioManager.instance.FadeIn("Wind", true);

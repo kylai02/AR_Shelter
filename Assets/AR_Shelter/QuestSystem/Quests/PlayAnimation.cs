@@ -54,7 +54,7 @@ public class PlayAnimation : MonoBehaviour {
       AudioManager.instance.FadeIn(bgmName, false);
     }
 
-    yield return new WaitForSeconds(7f);
+    yield return new WaitForSeconds(8f);
 
     if (bgmName != "") {
       AudioManager.instance.FadeOut(bgmName, false);
